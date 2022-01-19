@@ -1,0 +1,114 @@
+.Quiz_container_display{
+    width: 80%;
+    margin: 40px auto;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Quiz-MobileStepper{
+    width: 100%;
+    
+}
+
+#zaehler{
+    background: rgb(207, 207, 207);
+    border-radius: 4px;
+}
+.Quiz_que {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+}
+
+.Quiz_multiple_options{
+    margin-bottom: 15px;
+}
+
+
+
+.labela, li {
+    display: block;
+    width: 80%;
+    padding: 20px 10px;
+    background: rgb(207, 207, 207);
+    
+    margin-bottom: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+
+
+}
+
+li {
+    display: block;
+    width: 100%;
+    padding: 10px 10px;
+    background: rgb(207, 207, 207);
+    
+    margin-bottom: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+
+
+}
+
+
+
+
+input[type="radio"], input[type="checkbox"]{
+    visibility:hidden;
+}
+
+.whatever {
+
+    border: 1px solid rgb(83, 31, 182);
+    background-color: rgb(233, 233, 233);
+   
+    
+}
+
+
+
+input[type="radio"] + label {
+  position: relative;
+  cursor: pointer;
+}
+
+.forflex{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.forflex div, .forflex ul{
+  width: 45%;
+  
+}
+
+li > div {
+    padding: 0;
+    margin: 0;
+}
+
+.forflex div, .forflex ul {
+
+width: 80%;
+padding: 20px 10px;
+
+margin-bottom: 10px;
+border-radius: 4px;}
+
+.forflex div{
+ 
+   
+    padding: 0;}
+
+    ul li:nth-child(even){
+        
+    background-color: rgb(233, 233, 233);
+    }
+
+    .right {
+        float: right
+    }
