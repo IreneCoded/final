@@ -112,3 +112,22 @@ border-radius: 4px;}
     .right {
         float: right
     }
+
+    .Quiz-DisplayResult {
+        width: 80vw;
+        height: 60vh;
+        border-radius: 4px;
+        margin: 10vh auto;
+        background-color: rgb(207, 207, 207);
+        text-align: center; 
+        padding: 10vh 20vw;
+    }
+
+    #button {
+        background-color:rgb(94, 94, 94);
+        color:aliceblue
+    }
+
+    #button:hover {
+        background-color:rgb(177, 176, 175)
+    }

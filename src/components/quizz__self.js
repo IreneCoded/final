@@ -80,7 +80,7 @@ const Quiz_Set = [
         queno :"que_7",
         que : "Wie viele TN, glaubt ihr, hatte der WBS Campus mit Stand 22.11.2021?", 
         
-        options : [6800, 7500],
+        options : [6799, 7501],
         ans : "7036",
         ex :"https://wbsgruppe.sharepoint.com/sites/TeamWBSCampus/Freigegebene%20Dokumente/Forms/AllItems.aspx?id=%2Fsites%2FTeamWBSCampus%2FFreigegebene%20Dokumente%2FGeneral%2FZahlen%2C%20Daten%2C%20Fakten%2FKursmonitoring%2F2021%5FAuswertung%20TN%2DZahlen%5Fkomplett%2Epdf&parent=%2Fsites%2FTeamWBSCampus%2FFreigegebene%20Dokumente%2FGeneral%2FZahlen%2C%20Daten%2C%20Fakten%2FKursmonitoring&p=true",
         type : "number"
@@ -152,7 +152,7 @@ const Quiz_Set = [
         queno :"que_14",
         que : "Frage: Ab welchem Betrag ist für einen Auftrag von Honorartrainer:innen vom Trainereinsatzplaner:in die Freigabe vom Controlling einzuholen?", 
         
-        options : "",
+        options : [4999, 5001],
         ans : "5000",
         ex :"Lösung: zum Nachlesen https://wbsgruppe.sharepoint.com/sites/TeamWBSCampus/SitePages/WBS(1).aspx",
         type : "number"
@@ -326,10 +326,79 @@ export default function Quiz(){
                 setQuizAns(ans)
                 } 
                 
+
                 let nestate = activeStep +1;
                 if (Quiz_Set[nestate].type == "zuo" || Quiz_Set[nestate].type == "zuo") {Quiz_Set[nestate].ansmix? setSort([... Quiz_Set[nestate].ansmix]):setSort([... Quiz_Set[nestate+2].options]) }
-                console.log(total)
+              
+                
+                
+                if(Quiz_Set[activeStep].type =="single" && Quiz_Set[activeStep].ans == quizAns[activeStep]) {
+                    const count=total+1;
+                    setTotal(count)
+                }
+
+                else if(Quiz_Set[activeStep].type =="multi"){
+                    
+                      const a = Quiz_Set[activeStep].ans.sort();
+                      const b = (quizAns[activeStep]).sort();
+
+                   
+                    
+                    
+                    function arrayEquals(a, b) {
+                        return Array.isArray(a) &&
+                          Array.isArray(b) &&
+                          a.length === b.length &&
+                          a.every((val, index) => val === b[index]);
+                      }
+                      
+                      if(arrayEquals){
+                        const count=total+1;
+                        setTotal(count)
+                        console.log("klappt");
+                      }
+
+                      else{
+                        console.log("NÖ");
+                      }
+
+
+                }
+
+                else if (Quiz_Set[activeStep].type =="zuo" || Quiz_Set[activeStep].type =="sort"){
+                    const a = Quiz_Set[activeStep].ans;
+                    const b = (quizAns[activeStep]);
+                  function arrayEquals(a, b) {
+                      return Array.isArray(a) &&
+                        Array.isArray(b) &&
+                        a.length === b.length &&
+                        a.every((val, index) => val === b[index]);
+                    }
+                    
+                    if(arrayEquals){
+                      const count=total+1;
+                      setTotal(count)
+                      console.log("klappt");
+                    }
+
+                    else{
+                      console.log("NÖ");
+                    }
+
+
+              }
+
+              else if(Quiz_Set[activeStep].type =="number" && Quiz_Set[activeStep].options[0] < quizAns[activeStep] && Quiz_Set[activeStep].options[1]>quizAns[activeStep]){
+                             
+                const count=total+1;
+                    setTotal(count);
+                    console.log("HEUREKA")
+                
+
+
+          }console.log(Quiz_Set[activeStep].que + total)
                 setActiveStep(nestate);
+                
             }
 
    const handleBack=()=>{
@@ -432,7 +501,7 @@ setZuo(newItems);
            
     
         setBooleanonsubmit(true);
-        setTotal(6)
+       
           
    
     }
@@ -452,6 +521,8 @@ setZuo(newItems);
         setActiveStep(0); 
         setQuizAns([] );
         setTotal(0);
+        setSingle("");
+        setSort([]);
 
       }
 
@@ -460,8 +531,8 @@ return(
  <div className="Quiz_render_container">
     {booleanonsubmit ? 
         <div className="Quiz-DisplayResult"> 
-           <h2> Du hast {total} von 20 Fragen richtig beantwortet! </h2>
-             <Button onClick={clearState}> Try again </Button> 
+           <h2> Du hast {total+1} von 20 Fragen richtig beantwortet! </h2>
+             <Button onClick={clearState} id="button"> Try again </Button> 
         </div>
      :
      <div className="Quiz_container_display"> 
