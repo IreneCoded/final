@@ -118,6 +118,9 @@ border-radius: 4px;}
     }
 
     .Quiz-DisplayResult, .Quiz_container_display2 {
+        background-image: url("https://picsum.photos/800/1200?blur=8");
+        background-size: cover;
+
         
         border-radius: 4px;
         height: auto;
@@ -147,7 +150,8 @@ border-radius: 4px;}
     #nav{
         display: inline;
         background-color: #f0f0f0;
-        float: left;
+        width: 80%
+        
     }
 
     #nav li a{
