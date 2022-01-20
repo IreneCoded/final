@@ -1,6 +1,6 @@
 .Quiz_container_display{
     width: 80%;
-    margin: 40px auto;
+    margin: 120px auto;
     height: 80vh;
     display: flex;
     flex-direction: column;
@@ -11,7 +11,11 @@
     width: 100%;
     
 }
-
+.hidden, #button2{
+    visibility: hidden;
+    width: 15px;
+    display: inline;
+}
 #zaehler{
     background: rgb(207, 207, 207);
     border-radius: 4px;
@@ -32,7 +36,7 @@
     width: 80%;
     padding: 20px 10px;
     background: rgb(207, 207, 207);
-    
+    margin: 0 auto;
     margin-bottom: 10px;
     border-radius: 4px;
     cursor: pointer;
@@ -113,7 +117,7 @@ border-radius: 4px;}
         float: right
     }
 
-    .Quiz-DisplayResult {
+    .Quiz-DisplayResult, .Quiz_container_display2 {
         width: 80vw;
         height: 60vh;
         border-radius: 4px;
@@ -131,3 +135,87 @@ border-radius: 4px;}
     #button:hover {
         background-color:rgb(177, 176, 175)
     }
+
+    #nav li{
+        display: inline;
+        background-color: #dddddd;
+        float: left;
+        width: 200px;
+    }
+
+    #nav{
+        display: inline;
+        background-color: #f0f0f0;
+        float: left;
+    }
+
+    #nav li a{
+        display: block;
+         padding: 8px;
+        background-color: #f0f0f0;
+    }
+
+    #nav {
+       
+            display: flex;
+            justify-content: start;
+  
+        list-style-type: none;
+        margin: 10px;
+        padding: 10px;
+        padding-left: 0;
+        overflow: hidden;
+        background-color: rgba(240, 240, 240, 0);
+        position: absolute;
+        top: 0;
+        left: 10vw;
+        border-radius:4px ;
+      }
+      
+      #nav  li {
+        padding: 0;
+        margin: 0;
+        border-radius:4px ;
+
+      }
+
+      #nav  li:nth-child(2) {
+        
+        margin:0 15px ;
+      
+        
+      }
+      
+      #nav  li a {
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        
+        border-radius:4px ;
+      }
+      
+      .right li{
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+      }
+
+      .left{
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+      }
+      /* Change the link color to #111 (black) on hover */
+      #nav  li a:hover {
+        background-color: rgb(182, 182, 182);
+        color:rgb(83, 31, 182)
+      }
+
+      .wrapper{
+          display: inline;
+          margin: 0 auto;
+      }
+
+      input[type="number"]{
+          padding: 10px
+      }
