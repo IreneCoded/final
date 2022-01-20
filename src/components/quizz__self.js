@@ -690,8 +690,8 @@ return(
 
                                         <Draggable key={inNew} draggableId={item.queno + inNew} index={inNew}>
                                         {(provided) => (
-                                        <li ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                                            <div  className="Quiz_multiple_options stable" >
+                                        <li className="left" ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                                            <div  className="Quiz_multiple_options stable " >
                                              {ans} 
                                                                            
                                              </div>

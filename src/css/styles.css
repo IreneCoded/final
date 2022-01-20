@@ -1,4 +1,4 @@
-.Quiz_container_display{
+.Quiz_container_display, .Quiz-DisplayResult, .Quiz_container_display{
     width: 80%;
     margin: 120px auto;
     height: 80vh;
@@ -118,13 +118,14 @@ border-radius: 4px;}
     }
 
     .Quiz-DisplayResult, .Quiz_container_display2 {
-        width: 80vw;
-        height: 60vh;
+        
         border-radius: 4px;
-        margin: 10vh auto;
+        height: auto;
         background-color: rgb(207, 207, 207);
         text-align: center; 
-        padding: 10vh 20vw;
+        display: block;
+        padding: 20vh 0;
+        padding-bottom: 30vh
     }
 
     #button {
