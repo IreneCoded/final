@@ -11,15 +11,11 @@ import {
   Link
 } from "react-router-dom";  
 import './css/styles.css';
+import Create from './components/create';
 
 function App() {
-  function Create() {
-    return (
-      <div>
-        <h2>Create</h2>
-      </div>
-    );
-  }
+ 
+  
   return (
     <>
     <div className="App">

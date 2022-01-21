@@ -55,3 +55,9 @@ display: block;
     transform: rotate(360deg);
   }
 }
+
+
+.visi {
+  display: inline-block;
+  visibility: visible;
+}

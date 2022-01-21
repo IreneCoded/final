@@ -224,3 +224,62 @@ border-radius: 4px;}
       input[type="number"]{
           padding: 10px
       }
+
+      .create input, .create select {
+        padding: 10px;
+        width: 30%;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        margin-bottom: 5px;
+        margin-right: 5px;
+      }
+
+      .create select {
+        padding: 8px;
+        width: 31.4%;
+        margin-left: -39px;
+      }
+
+      #visi, .visi {
+        display: inline-block;
+        visibility: visible;
+      }
+
+      .create button {
+        padding: 10px 15px;
+        background-color: rgba(51, 29, 173, 0.452);
+        border-radius: 4px;
+        border: none;
+
+      }
+
+      .create button:hover{
+        background-color: rgba(148, 136, 214, 0.452);
+        cursor:pointer;
+
+      }
+
+      .create input[type = radio], .create input[type = checkbox] {
+        width: 20px;
+        margin-left: -30px;
+        
+
+      }
+
+      .create input[type = checkbox] {
+        width: 20px;}
+       
+        .box {width: 48%; margin: 0 auto}
+
+      
+      .bold {
+          font-weight: bold
+      }
+
+      .submit{
+          margin-top: 50px;
+      }
+
+      .create {
+          padding-top: 50px;
+      }
