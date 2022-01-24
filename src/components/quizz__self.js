@@ -318,6 +318,7 @@ export default function Quiz(){
             const handleNext=()=>{
        
                 setMulti([]);
+                let nestate = activeStep +1;
         
                 if (Quiz_Set[activeStep].type == sort)  {
                 const ans = [...quizAns]
@@ -325,9 +326,6 @@ export default function Quiz(){
               
                 setQuizAns(ans)
                 } 
-                
-
-                let nestate = activeStep +1;
                 if (Quiz_Set[nestate].type == "zuo" || Quiz_Set[nestate].type == "zuo") {Quiz_Set[nestate].ansmix? setSort([... Quiz_Set[nestate].ansmix]):setSort([... Quiz_Set[nestate+2].options]) }
               
                 
@@ -342,49 +340,37 @@ export default function Quiz(){
                       const a = Quiz_Set[activeStep].ans.sort();
                       const b = (quizAns[activeStep]).sort();
 
+                        let result =   a.length === b.length &&
+                        a.every(function (element) {
+                        return b.includes(element);
+                         });
+
                    
-                    
-                    
-                    function arrayEquals(a, b) {
-                        return Array.isArray(a) &&
-                          Array.isArray(b) &&
-                          a.length === b.length &&
-                          a.every((val, index) => val === b[index]);
-                      }
-                      
-                      if(arrayEquals){
+                    console.log(result)
+                      if(result == true){
                         const count=total+1;
                         setTotal(count)
                         console.log("klappt");
                       }
 
-                      else{
-                        console.log("NÖ");
-                      }
-
-
-                }
+                      
+                   }
 
                 else if (Quiz_Set[activeStep].type =="zuo" || Quiz_Set[activeStep].type =="sort"){
                     const a = Quiz_Set[activeStep].ans;
                     const b = (quizAns[activeStep]);
-                  function arrayEquals(a, b) {
-                      return Array.isArray(a) &&
-                        Array.isArray(b) &&
-                        a.length === b.length &&
-                        a.every((val, index) => val === b[index]);
-                    }
-                    
-                    if(arrayEquals){
-                      const count=total+1;
-                      setTotal(count)
-                      console.log("klappt");
-                    }
+                    let result =   a.length === b.length &&
+                    a.every(function (element) {
+                    return b.includes(element);
+                     });
 
-                    else{
-                      console.log("NÖ");
-                    }
-
+               
+                console.log(result)
+                  if(result == true){
+                    const count=total+1;
+                    setTotal(count)
+                    console.log("klappt");
+                  }
 
               }
 
@@ -396,7 +382,11 @@ export default function Quiz(){
                 
 
 
-          }console.log(Quiz_Set[activeStep].que + total)
+          }
+                
+
+                
+                console.log(total)
                 setActiveStep(nestate);
                 
             }
