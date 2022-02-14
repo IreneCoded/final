@@ -25,7 +25,7 @@ const Quiz_Set = [
     {
         queno :"que_2",
         que : "Wo finde ich als KL die Serverzuweisung für die neu startenden Kurse (News \"Einführung in unser Online-Lernformat\")?",
-        options : [{que_options : "News Überblicksseite " , selected : false},{que_options :"IT Hubsite -> Applikationen", selected : false},{que_options :"IT Hubsite -> Service ", selected : false}],
+        options : [{que_options : "News Überblicksseite" , selected : false},{que_options :"IT Hubsite -> Applikationen", selected : false},{que_options :"IT Hubsite -> Service ", selected : false}],
         ans : ["News Überblicksseite" , "IT Hubsite -> Applikationen" ],
         ex : "Wer sich nicht in Sharepoint alle News anzeigen lassen will (auf der grandiosen Überblicksseite), kann die News auf der IT-Hubwebsite und dann unter Applikationen -> Lernplattformen -> WBS LS3D finden ",
         type : "multi"
@@ -34,7 +34,7 @@ const Quiz_Set = [
         queno :"que_3",
         que : "Welche Kompetenzpartnergremien (KPG) gibt es bei der WBS? (Mehrfachnennung möglich)", 
         
-        options : [{que_options : "KPG Bildung " , selected : false},{que_options :"KPG Marketing, eCommerce und Vertrieb ", selected : false},{que_options :"KPG HR ", selected : false},{que_options :"KPG IT  ", selected : false}, {que_options :"KPG Finanzen ", selected : false}, {que_options :"KPG Beratung", selected : false}],
+        options : [{que_options : "KPG Bildung" , selected : false},{que_options :"KPG Marketing, eCommerce und Vertrieb", selected : false},{que_options :"KPG HR", selected : false},{que_options :"KPG IT", selected : false}, {que_options :"KPG Finanzen", selected : false}, {que_options :"KPG Beratung", selected : false}],
         ans : [ 
             "KPG Bildung",
             "KPG Marketing, eCommerce und Vertrieb", 
@@ -70,8 +70,8 @@ const Quiz_Set = [
         queno :"que_6",
         que : "Welches Projekt steht für eine vertrauensvolle Zusammenarbeit mit unseren Ausbilder:innen und Trainer:innen sowie den Honorarkräften?  ", 
         
-        options : [{que_options : "1.	Programm X" , selected : false},{que_options :"TrusT", selected : false},{que_options :"Macomi", selected : false}],
-        ans : "2.	TrusT ",
+        options : [{que_options : "Programm X" , selected : false},{que_options :"TrusT", selected : false},{que_options :"Macomi", selected : false}],
+        ans : "TrusT ",
         ex :"https://wbsgruppe.sharepoint.com/:p:/s/TeamWBSCampus/EXKKDVFAApFBpvGgRbGQ1I0BrJgjOovmp8DJU3-WvF6OHA?e=iTFybR ",
         type : "single"
     },
@@ -185,13 +185,7 @@ const Quiz_Set = [
                 "CAD Bauwesen " ,  
             
             ],
-        ans : [{que_options : "Konsultationsmodell" , selected : 1},
-        {que_options : "6:4" , selected : 2}, 
-        {que_options : "Konsultationsmodell" , selected : 3},
-        {que_options :"Konsultationsmodell", selected : 4},                
-        {que_options : "6:4" , selected : 5}         
-    
-    ],
+        ans : ["Konsultationsmodell" , "6:4", "Konsultationsmodell", "Konsultationsmodell", "6:4" ],
     ansmix: ["Konsultationsmodell" , "Konsultationsmodell" , "Konsultationsmodell","6:4", 
     "6:4"          
     
@@ -235,10 +229,10 @@ const Quiz_Set = [
         que : "Wie entsteht eine Kursgruppe auf dem eCampus?", 
         
         options : [
-            "4 Syncer legt eCampus-Kursgruppe an",
-            "2 Anmeldung ausgelöst, per E-Mail an WBS CampusAnmeldung gesendet", 
-            "1 TN-Daten werden in KVS eingetragen",
-            "3 TN wird in UGV erfasst", 
+            "Syncer legt eCampus-Kursgruppe an",
+            "Anmeldung ausgelöst, per E-Mail an WBS CampusAnmeldung gesendet", 
+            "TN-Daten werden in KVS eingetragen",
+            "TN wird in UGV erfasst", 
             ],
             ans : ["TN-Daten werden in KVS eingetragen", 
             "Anmeldung ausgelöst, per E-Mail an WBS CampusAnmeldung gesendet", 
@@ -263,15 +257,7 @@ const Quiz_Set = [
             "Kompetenzbereich 8", 
         
         ],
-        ans : [
-            {que_options : "US IT / Handel Vertrieb Verkauf" , selected : 1},
-            {que_options : "Büma, IDK, Offman" , selected : 2}, 
-            {que_options : "Gesundheit, Pflege, Immo, Umwelt, Sicherheit, Lalo" , selected : 3},
-            {que_options :"FIBU, BIBU, Steuer, Sprachen, Modern Workplace, Vorbereitungskurse", selected : 4},
-            {que_options : "SAP, PM, QM, Changemanagement, IEACIL" , selected : 5},
-            {que_options : "Technologie" , selected : 6}, 
-            {que_options : "CAD, Medien, IT WB, EDV" , selected : 7},
-            {que_options :"Personal, LOBU, Pädagogik, Handel, Kommunikation, HoGa, Arbeiten 4.0, Verwaltung", selected : 8}],
+        ans : ["US IT / Handel Vertrieb Verkauf", "Büma, IDK, Offman" ,  "Gesundheit, Pflege, Immo, Umwelt, Sicherheit, Lalo", "FIBU, BIBU, Steuer, Sprachen, Modern Workplace, Vorbereitungskurse",  "SAP, PM, QM, Changemanagement, IEACIL" , "Technologie" ,  "CAD, Medien, IT WB, EDV" ,  "Personal, LOBU, Pädagogik, Handel, Kommunikation, HoGa, Arbeiten 4.0, Verwaltung"],
 
             ansmix : [
                 "Technologie",
@@ -318,7 +304,7 @@ export default function Quiz(){
             const handleNext=()=>{
        
                 setMulti([]);
-                let nestate = activeStep +1;
+                setZuo([]);
         
                 if (Quiz_Set[activeStep].type == sort)  {
                 const ans = [...quizAns]
@@ -326,6 +312,9 @@ export default function Quiz(){
               
                 setQuizAns(ans)
                 } 
+                
+
+                let nestate = activeStep +1;
                 if (Quiz_Set[nestate].type == "zuo" || Quiz_Set[nestate].type == "zuo") {Quiz_Set[nestate].ansmix? setSort([... Quiz_Set[nestate].ansmix]):setSort([... Quiz_Set[nestate+2].options]) }
               
                 
@@ -337,40 +326,47 @@ export default function Quiz(){
 
                 else if(Quiz_Set[activeStep].type =="multi"){
                     
-                      const a = Quiz_Set[activeStep].ans.sort();
-                      const b = (quizAns[activeStep]).sort();
+                    const a = Quiz_Set[activeStep].ans.sort();
+                    const b = (quizAns[activeStep]).sort();
 
-                        let result =   a.length === b.length &&
-                        a.every(function (element) {
-                        return b.includes(element);
-                         });
+                      let result =   a.length === b.length &&
+                      a.every(function (element) {
+                      return b.includes(element);
+                       });
 
-                   
-                    console.log(result)
-                      if(result == true){
-                        const count=total+1;
-                        setTotal(count)
-                        console.log("klappt");
-                      }
+                 
+                  console.log(result)
+                    if(result == true){
+                      const count=total+1;
+                      setTotal(count)
+                      console.log("klappt");
+                    }
 
-                      
-                   }
+                    
+                 }
 
                 else if (Quiz_Set[activeStep].type =="zuo" || Quiz_Set[activeStep].type =="sort"){
                     const a = Quiz_Set[activeStep].ans;
-                    const b = (quizAns[activeStep]);
-                    let result =   a.length === b.length &&
-                    a.every(function (element) {
-                    return b.includes(element);
-                     });
+                    const b = quizAns;
+                    console.log(a);
+                    console.log(b);
+                  function arrayEquals(a, b) {
+                      return Array.isArray(a) &&
+                        Array.isArray(b) &&
+                        a.length === b.length &&
+                        a.every((val, index) => val === b[index]);
+                    }
+                    
+                    if(arrayEquals){
+                      const count=total+1;
+                      setTotal(count)
+                      console.log("klappt");
+                    }
 
-               
-                console.log(result)
-                  if(result == true){
-                    const count=total+1;
-                    setTotal(count)
-                    console.log("klappt");
-                  }
+                    else{
+                      console.log("NÖ");
+                    }
+
 
               }
 
@@ -382,11 +378,7 @@ export default function Quiz(){
                 
 
 
-          }
-                
-
-                
-                console.log(total)
+          }console.log(Quiz_Set[activeStep].que + total)
                 setActiveStep(nestate);
                 
             }
@@ -472,6 +464,10 @@ var newItems = items.filter(Boolean)
 //console.log(items)
 setSort(newItems);
 
+const ans = [...quizAns]
+        ans[activeStep] = sort;
+        setQuizAns(ans);
+
 }
 
 function handleOnDragEnd2(result) {
@@ -484,6 +480,10 @@ items.splice(result.destination.index, 0, reorderedItem);
 var newItems = items.filter(Boolean)
 //console.log(items)
 setZuo(newItems);
+
+const ans = [...quizAns]
+        ans[activeStep] = zuo;
+        setQuizAns(ans);
 
 }
 

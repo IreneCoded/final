@@ -359,18 +359,23 @@ export default function Quiz(){
                 else if (Quiz_Set[activeStep].type =="zuo" || Quiz_Set[activeStep].type =="sort"){
                     const a = Quiz_Set[activeStep].ans;
                     const b = (quizAns[activeStep]);
-                    let result =   a.length === b.length &&
-                    a.every(function (element) {
-                    return b.includes(element);
-                     });
+                  function arrayEquals(a, b) {
+                      return Array.isArray(a) &&
+                        Array.isArray(b) &&
+                        a.length === b.length &&
+                        a.every((val, index) => val === b[index]);
+                    }
+                    
+                    if(arrayEquals){
+                      const count=total+1;
+                      setTotal(count)
+                      console.log("klappt");
+                    }
 
-               
-                console.log(result)
-                  if(result == true){
-                    const count=total+1;
-                    setTotal(count)
-                    console.log("klappt");
-                  }
+                    else{
+                      console.log("NÖ");
+                    }
+
 
               }
 
